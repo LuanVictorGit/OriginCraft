@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../src/fonts/Minecrafter-MA3Dw.ttf');
+}
+@font-face {
+    font-family: 'Minecraft1';
+    src: url('../src/fonts/MinecraftTen-VGORe.ttf');
+}
+@font-face {
+    font-family: 'Minecraft2';
+    src: url('../src/fonts/Minecraftchmc-dBlX.ttf');
+}
+
+p {
+    @apply text-stone-50 text-base;
+}
+
+.button {
+    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-2 text-stone-50 uppercase flex-row flex-nowrap font-bold p-2 rounded-full;
+}
+
+.button:hover {
+    @apply transition-all duration-500 ease-in-out bg-blue-600;
+}
+
+.button a {
+    @apply flex justify-center items-center gap-1 flex-row;
+}
+
+.icon {
+    @apply w-8 h-auto invert;
+}
+
+.title {
+    @apply text-stone-50 font-bold text-2xl;
+}
+
+.hero {
+    @apply bg-blue-950 min-h-[100vh] w-full;
+}
