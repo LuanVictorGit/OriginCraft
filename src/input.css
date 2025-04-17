@@ -12,19 +12,24 @@
     src: url('../src/fonts/Minecraftchmc-dBlX.ttf');
 }
 
+* {
+    @apply max-w-full;
+}
+
 body {
     background-image: url("./images/background.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 main {
     background-color: rgb(22, 36, 86, .8);
-    @apply min-h-[100vh] w-full mt-14;
+    @apply min-h-[100vh] w-full mt-14 max-w-full p-2;
 }
 
 header {
-    @apply fixed w-full top-0;
+    @apply fixed w-full top-0 z-1 shadow-2xs shadow-black;
 }
 
 p {
@@ -45,4 +50,32 @@ p {
 
 .title {
     @apply text-stone-50 font-bold text-2xl;
+}
+
+a>* {
+    pointer-events: none;
+}
+
+.button_category {
+    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-1 text-stone-50 uppercase flex-col flex-nowrap font-bold p-2 rounded-md text-2xl bg-blue-700 w-40;
+}
+
+.button_category img {
+    @apply w-6 h-auto;
+}
+
+.button_category:hover {
+    @apply bg-blue-500;
+}
+
+.button_category:hover img {
+    @apply animate-bounce;
+}
+
+.category_selected {
+    @apply cursor-not-allowed bg-blue-500;
+}
+
+.category_selected img {
+    @apply animate-bounce;
 }
