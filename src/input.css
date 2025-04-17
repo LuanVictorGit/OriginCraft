@@ -13,7 +13,7 @@
 }
 
 p {
-    @apply text-stone-50 text-base;
+    @apply text-stone-50;
 }
 
 .button {
@@ -34,8 +34,4 @@ p {
 
 .title {
     @apply text-stone-50 font-bold text-2xl;
-}
-
-.hero {
-    @apply bg-blue-950 min-h-[100vh] w-full;
 }
