@@ -12,24 +12,35 @@
     src: url('../src/fonts/Minecraftchmc-dBlX.ttf');
 }
 
+body {
+    background-image: url("./images/background.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    background-color: rgb(22, 36, 86, .8);
+    @apply min-h-[100vh] w-full mt-14;
+}
+
+header {
+    @apply fixed w-full top-0;
+}
+
 p {
     @apply text-stone-50;
 }
 
 .button {
-    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-2 text-stone-50 uppercase flex-row flex-nowrap font-bold p-2 rounded-full;
+    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-1 text-stone-50 uppercase flex-row flex-nowrap font-bold p-2 rounded-full text-base;
 }
 
 .button:hover {
     @apply transition-all duration-500 ease-in-out bg-blue-600;
 }
 
-.button a {
-    @apply flex justify-center items-center gap-1 flex-row;
-}
-
 .icon {
-    @apply w-8 h-auto invert;
+    @apply w-6 h-auto invert;
 }
 
 .title {
