@@ -32,10 +32,6 @@ header {
     @apply fixed w-full top-0 z-1 shadow-2xs shadow-black;
 }
 
-p {
-    @apply text-stone-50;
-}
-
 .button {
     @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-1 text-stone-50 uppercase flex-row flex-nowrap font-bold p-2 rounded-full text-base;
 }
@@ -78,4 +74,8 @@ a>* {
 
 .category_selected img {
     @apply animate-bounce;
+}
+
+.card:hover {
+    @apply brightness-150 scale-95;
 }

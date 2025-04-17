@@ -35,7 +35,7 @@
                 <img src="./src/images/logo.png" alt="logo servidor" class="w-80 h-auto rounded-full shadow-black shadow-lg">
             </div>
             <div class="flex justify-center items-center gap-2 p-2 flex-col bg-blue-400 shadow-md shadow-black rounded-lg mt-24">
-                <p class="text-xl font-[Minecraft] text-bold text-shadow-black text-shadow-md">o melhor survival do brasil!</p>
+                <p class="font-[Minecraft] text-bold text-shadow-black text-shadow-md text-stone-50 text-2xl">o melhor survival do brasil!</p>
                 <a href="#" title="copiar ip do servidor." class="flex justify-center items-center gap-2 flex-row transition-all duration-500 ease-in-out p-2 rounded-lg bg-blue-800 hover:bg-blue-900" onclick="
                     event.preventDefault();
                     const target = document.getElementById('ip');
@@ -59,7 +59,7 @@
                     <span class="text-blue-300 text-bold font-[Minecraft]">
                         IP:
                     </span>
-                    <p class="font-[Minecraft] min-w-40" id="ip">jogar.origincraft.com.br</p>
+                    <p class="font-[Minecraft] min-w-40 text-stone-50" id="ip">jogar.origincraft.com.br</p>
                     <span class="font-[Minecraft] uppercase text-stone-50 bg-blue-500 p-2 flex justify-center items-center rounded-lg shadow-black shadow-md">
                         copiar
                     </span>
@@ -72,7 +72,7 @@
         <!-- criando a div da loja-->
         <div class="backdrop-blur-xs rounded-lg min-h-[100vh] m-10 shadow-black shadow-2xl p-2">
             <div class="w-full text-center p-6 bg-blue-500 shadow-black shadow-2xl flex justify-center items-center rounded-tr-lg rounded-tl-lg">
-                <p class="font-[Minecraft] text-3xl">selecione a categoria de vip</p>
+                <p class="font-[Minecraft] text-3xl text-stone-50 text-shadow-black text-shadow-md">selecione a categoria de vip</p>
             </div>
             <div class="w-full p-2 bg-blue-400 shadow-black shadow-2xl flex justify-center items-center gap-10">
                 <a href="#" title="VIP" class="button_category category_selected" id="vip1">
@@ -89,7 +89,19 @@
                 </a>
             </div>
             <div class="w-full p-2 bg-blue-300 min-h-[50rem]">
-
+                <!--configurando o card aqui-->
+                <a href="#" class="card flex justify-center items-center flex-col w-fit gap-2 text-shadow-black text-shadow-md p-6 bg-blue-950 rounded-lg shadow-black shadow-md transition-all duration-500 ease-in-out">
+                    <img src="./src/images/gold.png" alt="vip icon" class="w-60 h-auto rounded-lg shadow-black shadow-md">
+                    <p class="font-[Minecraft] text-6xl text-yellow-200">VIP</p>
+                    <div class="flex justify-center items-center gap-1 flex-row">
+                        <p class="font-[Minecraft] text-2xl line-through text-yellow-200">R$ 10,00</p>
+                        <p class="font-[Minecraft] text-5xl text-yellow-400">R$ 5,00</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-1 p-6 rounded-full bg-blue-900">
+                        <img src="./src/images/shopping_cart.png" alt="cart icon" class="w-8 h-auto invert animate-bounce">
+                        <p class="font-[Minecraft] text-3xl uppercase text-stone-50">comprar</p>
+                    </div>
+                </a>
             </div>
         </div>
     </main>
@@ -97,5 +109,6 @@
 
     </footer>
     <script src="./index.js"></script>
+    <script src="./shop.js"></script>
 </body>
 </html>
