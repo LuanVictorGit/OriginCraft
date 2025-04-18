@@ -7,7 +7,7 @@ async function updatePlayers() {
     const contentPlayers = document.getElementById("contentPlayers");
     
     try {
-        const req = await fetch("146.235.61.99:3000/server");
+        const req = await fetch("http://146.235.61.99:3000/server");
         if (!req.ok) {
             setTimeout(updatePlayers, 10000);
             return;
