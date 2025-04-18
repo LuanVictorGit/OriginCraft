@@ -103,3 +103,11 @@ a>* {
 .card:hover .description_card {
     display: unset;
 }
+
+.loader {
+    @apply rounded-full animate-spin bg-transparent border-b-4 border-b-blue-400 w-[3rem] h-[3rem];
+}
+
+.contentPlayers {
+    
+}

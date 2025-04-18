@@ -71,7 +71,7 @@
             <img src="./src/images/scroll.png" alt="image hand to scroll" class="w-8 h-auto animate-bounce invert">
         </div>
         <!-- criando a div da loja-->
-        <div class="backdrop-blur-xs rounded-lg min-h-[100vh] m-10 shadow-black shadow-2xl p-2">
+        <div class="backdrop-blur-xs rounded-lg min-h-[100vh] m-10 shadow-black shadow-lg p-2">
             <div class="w-full text-center p-6 bg-blue-500 shadow-black shadow-2xl flex justify-center items-center rounded-tr-lg rounded-tl-lg">
                 <p class="font-[Minecraft] text-3xl text-stone-50 text-shadow-black text-shadow-md">selecione a categoria de vip</p>
             </div>
@@ -103,7 +103,7 @@
                         <img src="./src/images/shopping_cart.png" alt="cart icon" class="w-8 h-auto invert animate-pulse">
                         <p class="font-[Minecraft] text-3xl uppercase text-stone-50">comprar</p>
                     </div>
-                    <div class="description_card absolute min-w-[40rem] min-h-[20rem] z-2 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase">
+                    <div class="description_card absolute min-w-[40rem] min-h-[20rem] z-3 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase">
                         duracao de 7 dias.<br>
                         beneficios:<br>
                         - /Kit vip - cooldown de 1 dia.<br>
@@ -122,7 +122,7 @@
                         <img src="./src/images/shopping_cart.png" alt="cart icon" class="w-8 h-auto invert animate-pulse">
                         <p class="font-[Minecraft] text-3xl uppercase text-stone-50">comprar</p>
                     </div>
-                    <div class="description_card absolute min-w-[40rem] min-h-[20rem] z-2 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase">
+                    <div class="description_card absolute min-w-[40rem] min-h-[20rem] z-3 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase">
                         duracao de 15 dias.<br>
                         beneficios:<br>
                         - /Kit vip - cooldown de 1 dia.<br>
@@ -141,7 +141,7 @@
                         <img src="./src/images/shopping_cart.png" alt="cart icon" class="w-8 h-auto invert animate-pulse">
                         <p class="font-[Minecraft] text-3xl uppercase text-stone-50">comprar</p>
                     </div>
-                    <div class="description_card absolute min-w-[40rem] min-h-[20rem] z-2 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase">
+                    <div class="description_card absolute min-w-[40rem] min-h-[20rem] z-3 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase">
                         duracao de 30 dias.<br>
                         beneficios:<br>
                         - /Kit vip - cooldown de 1 dia.<br>
@@ -150,11 +150,22 @@
                 </a>
             </div>
         </div>
+        <div class="flex justify-start items-center h-[100vh] m-10 p-6 flex-col gap-6">
+            <div class="flex justify-center items-center gap-1 font-[Minecraft2] uppercase font-bold text-blue-50 text-5xl">
+                <p class="mr-2">jogadores online ></p>
+                <span class="text-green-500" id="onlineNumber">100</span>
+                <img src="./src/images/online.png" alt="image online icon" class="w-2 h-auto animate-pulse brightness-150">
+            </div>
+            <div class="loader gap-25 flex justify-center items-center flex-wrap" id="contentPlayers">
+
+            </div>
+        </div>
     </main>
     <footer>
 
     </footer>
     <script src="./index.js"></script>
     <script src="./shop.js"></script>
+    <script src="./players.js"></script>
 </body>
 </html>
