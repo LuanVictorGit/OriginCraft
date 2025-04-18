@@ -37,7 +37,15 @@ header {
 }
 
 .button:hover {
-    @apply transition-all duration-500 ease-in-out bg-blue-600;
+    @apply bg-blue-600;
+}
+
+.button_selected {
+    @apply bg-blue-600 cursor-not-allowed;
+}
+
+.button_selected img {
+    @apply animate-pulse;
 }
 
 .icon {
@@ -76,6 +84,22 @@ a>* {
     @apply animate-bounce;
 }
 
+.card {
+    position: relative;
+}
+
+.card .description_card {
+    display: none;
+}
+
+.description_card {
+    @apply duration-700 ease-in-out transition-all top-135 rounded-lg bg-blue-950;
+}
+
 .card:hover {
     @apply brightness-150 scale-95;
+}
+
+.card:hover .description_card {
+    display: unset;
 }
