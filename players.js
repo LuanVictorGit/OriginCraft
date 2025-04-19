@@ -7,7 +7,7 @@ async function updatePlayers() {
     const contentPlayers = document.getElementById("contentPlayers");
     
     try {
-        const req = await fetch("https://146.235.61.99:3001/server");
+        const req = await fetch("https://jogar.luandev.blog.br:3001/server");
         if (!req.ok) {
             setTimeout(updatePlayers, 10000);
             return;
