@@ -108,6 +108,34 @@ a>* {
     @apply rounded-full animate-spin bg-transparent border-b-4 border-b-blue-400 w-[3rem] h-[3rem];
 }
 
-.contentPlayers {
-    
+.selectorsFooter {
+    @apply flex justify-center items-center gap-6;
+}
+
+.selectorsFooter * {
+    @apply duration-500 transition-all ease-in-out;
+}
+
+.selectorsFooter div {
+    @apply w-[25rem] flex justify-center items-center gap-2 rounded-lg p-2 flex-col;
+}
+
+.selectorsFooter h1 {
+    @apply font-[Minecraft1] text-blue-50 border-b-2 border-b-blue-400 border-dashed;
+}
+
+.selectorsFooter p {
+    @apply font-[Minecraft2] text-blue-50 text-2xl text-justify;
+}
+
+.selectorsFooter a {
+    @apply flex justify-center items-center gap-2 rounded-lg p-4 uppercase bg-blue-900 w-[15rem] shadow-black shadow-md;
+}
+
+.selectorsFooter a:hover {
+    @apply brightness-80;
+}
+
+.selectorsFooter img {
+    @apply w-8 h-auto invert;
 }

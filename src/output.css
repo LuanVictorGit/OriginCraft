@@ -39,6 +39,7 @@
     --font-weight-bold: 700;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
+    --radius-2xl: 1rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-spin: spin 1s linear infinite;
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -241,9 +242,6 @@
   .min-h-\[100vh\] {
     min-height: 100vh;
   }
-  .w-0 {
-    width: calc(var(--spacing) * 0);
-  }
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
@@ -252,15 +250,6 @@
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
-  }
-  .w-10 {
-    width: calc(var(--spacing) * 10);
-  }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
-  }
-  .w-30 {
-    width: calc(var(--spacing) * 30);
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
@@ -346,11 +335,11 @@
   .gap-10 {
     gap: calc(var(--spacing) * 10);
   }
-  .gap-20 {
-    gap: calc(var(--spacing) * 20);
-  }
   .gap-25 {
     gap: calc(var(--spacing) * 25);
+  }
+  .gap-100 {
+    gap: calc(var(--spacing) * 100);
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -358,15 +347,43 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .rounded-tl {
+    border-top-left-radius: 0.25rem;
+  }
+  .rounded-tl-2xl {
+    border-top-left-radius: var(--radius-2xl);
+  }
+  .rounded-tl-full {
+    border-top-left-radius: calc(infinity * 1px);
+  }
   .rounded-tl-lg {
     border-top-left-radius: var(--radius-lg);
   }
   .rounded-tr-lg {
     border-top-right-radius: var(--radius-lg);
   }
+  .rounded-br {
+    border-bottom-right-radius: 0.25rem;
+  }
+  .rounded-br-2xl {
+    border-bottom-right-radius: var(--radius-2xl);
+  }
+  .rounded-br-full {
+    border-bottom-right-radius: calc(infinity * 1px);
+  }
+  .rounded-br-lg {
+    border-bottom-right-radius: var(--radius-lg);
+  }
+  .rounded-bl-lg {
+    border-bottom-left-radius: var(--radius-lg);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
   }
   .bg-blue-300 {
     background-color: var(--color-blue-300);
@@ -392,6 +409,9 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
@@ -406,9 +426,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .font-\[Minecraft1\] {
-    font-family: Minecraft1;
   }
   .font-\[Minecraft2\] {
     font-family: Minecraft2;
@@ -497,6 +514,10 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .brightness-75 {
+    --tw-brightness: brightness(75%);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .brightness-150 {
     --tw-brightness: brightness(150%);
@@ -718,6 +739,74 @@ a>* {
   border-bottom-width: 4px;
   border-bottom-color: var(--color-blue-400);
   background-color: transparent;
+}
+.selectorsFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 6);
+}
+.selectorsFooter * {
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 500ms;
+  transition-duration: 500ms;
+  --tw-ease: var(--ease-in-out);
+  transition-timing-function: var(--ease-in-out);
+}
+.selectorsFooter div {
+  display: flex;
+  width: 25rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+  border-radius: var(--radius-lg);
+  padding: calc(var(--spacing) * 2);
+}
+.selectorsFooter h1 {
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 2px;
+  --tw-border-style: dashed;
+  border-style: dashed;
+  border-bottom-color: var(--color-blue-400);
+  font-family: Minecraft1;
+  color: var(--color-blue-50);
+}
+.selectorsFooter p {
+  text-align: justify;
+  font-family: Minecraft2;
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  color: var(--color-blue-50);
+}
+.selectorsFooter a {
+  display: flex;
+  width: 15rem;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-blue-900);
+  padding: calc(var(--spacing) * 4);
+  text-transform: uppercase;
+  --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  --tw-shadow-color: #000;
+  @supports (color: color-mix(in lab, red, red)) {
+    --tw-shadow-color: color-mix(in oklab, var(--color-black) var(--tw-shadow-alpha), transparent);
+  }
+}
+.selectorsFooter a:hover {
+  --tw-brightness: brightness(80%);
+  filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+}
+.selectorsFooter img {
+  height: auto;
+  width: calc(var(--spacing) * 8);
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
 }
 @property --tw-rotate-x {
   syntax: "*";

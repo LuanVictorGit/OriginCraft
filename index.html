@@ -10,7 +10,7 @@
 <body class="bg-stone-300">
     
 
-    <header class="w-100vw bg-blue-900 h-14">
+    <header class="w-100vw bg-blue-950 h-14">
         <nav class="h-full flex justify-evenly items-center">
             <h1 class="title flex justify-center items-center gap-2 flex-row">
                 <div>
@@ -153,16 +153,39 @@
         <div class="flex justify-start items-center h-[100vh] m-10 p-6 flex-col gap-6">
             <div class="flex justify-center items-center gap-1 font-[Minecraft2] uppercase font-bold text-blue-50 text-5xl">
                 <p class="mr-2">jogadores online ></p>
-                <span class="text-green-500" id="onlineNumber">100</span>
+                <span class="text-green-500" id="onlineNumber">0</span>
                 <img src="./src/images/online.png" alt="image online icon" class="w-2 h-auto animate-pulse brightness-150">
             </div>
             <div class="loader gap-25 flex justify-center items-center flex-wrap" id="contentPlayers">
-
+                <!--content of players on web-->
             </div>
         </div>
     </main>
-    <footer>
-
+    <footer class="flex flex-col justify-center items-center gap-10 w-full bg-blue-950 p-6">
+        <div class="selectorsFooter">
+            <div>
+                <h1>acessibilidade</h1>
+                <a href="#">
+                    <img src="./src/images/terms-and-conditions.png" alt="image of terms and conditions">
+                    <p>termos e condicoes</p>
+                </a>
+            </div>
+            <div>
+                <h1>sobre nos</h1>
+                <p>A OriginCraft é um servidor Survival dedicado a oferecer a melhor experiência de jogabilidade para seus jogadores. Nosso compromisso é evoluir constantemente e manter o posto de melhor servidor brasileiro de Survival da atualidade.</p>
+            </div>
+            <div>
+                <h1>redes sociais</h1>
+                <a href="#">
+                    <img src="./src/images/discord.png" alt="discord icon image">
+                    <p>discord</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-blue-50 text-center font-[Minecraft2] bg-blue-950 brightness-75 p-4 rounded-br-2xl rounded-tl-2xl shadow-black shadow-lg">
+            <p class="text-3xl">Copyright &#x00A9; OriginCraft. Todos os direitos reservados.</p>
+            <p class="text-2xl">Desenvolvido por <a href="https://luandev.blog.br" target="_blank" class="text-blue-400">LuanDev</a>.</p>
+        </div>
     </footer>
     <script src="./index.js"></script>
     <script src="./shop.js"></script>
