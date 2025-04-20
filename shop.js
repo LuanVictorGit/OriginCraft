@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!element.classList.contains("button_category")) return;
         e.preventDefault();
         if (element.classList.contains("category_selected")) return;
+        document.getElementsByClassName("category_selected")[0].classList.remove("category_selected");
         categorySelected.classList.remove("category_selected");
         element.classList.add("category_selected");
         categorySelected = element;
@@ -62,29 +63,54 @@ async function updateCategorys() {
     }    
 }
 
-function onClickItemShop(item){
+let htmlBody;
+function onClickItemShop(event) {
+    event.preventDefault();
+    const element = event.target;
+    const item = element.dataset.item;
+    if (!item) return;
 
+    // Desativa o scroll da página
+    document.body.style.overflow = 'hidden';
+    htmlBody = document.body.innerHTML;
+    const html = `
+        <div class="w-full h-[100vh] fixed top-0 z-50 backdrop-blur-sm bg-opacity-50 flex items-start justify-center p-4" id="confirmBuy">
+            <a href="#" class="bg-blue-950 w-[15rem] h-[4rem] flex justify-center items-center gap-2 rounded-lg shadow-black shadow-md duration-500 ease-in-out transition-all hover:brightness-75" onclick="closeModalShopItem()">
+                <img src="./src/images/arrow_back.png" alt="back icon" class="w-6 h-auto invert animate-pulse">
+                <p class="text-blue-50 font-[Minecraft2] uppercase text-4xl font-bold">voltar</p>
+            </a>
+        </div>
+    `;
+
+    document.body.innerHTML = html;
+}
+
+function closeModalShopItem() {
+    document.body.style.overflow = null;
+    document.body.innerHTML = htmlBody;
+    ajustVolumeSound();
 }
 
 let categorySelected;
 async function onClickCategory(category) {
     const contentItems = document.getElementById("contentItemsShop");
-    let delay = 0.1;
-
-    let html = "";
+    
+    let delay = 0.3;
+    contentItems.innerHTML = "";
     for(let item of category["items"]) {
         const title = item["title"];
         const subtitle = item["subtitle"];
         const description = item["description"];
         const iconPathItem = item["iconPath"];
         const price = item["price"];
+        const promotion = item["promotion"];
 
         var htmlItem = `
-                <a href="#" onclick="onClickItemShop(${item})" class="card flex justify-center items-center flex-col w-100 max-w-100 gap-2 text-shadow-black text-shadow-md p-6 bg-blue-950 rounded-lg shadow-black shadow-md transition-all duration-500 ease-in-out" style="animation: slideUp 0.5s ease-in-out ${delay}s forwards;">
+                <a href="#" onclick="onClickItemShop(event)" data-item='${item}' class="card flex justify-center items-center flex-col w-100 max-w-100 gap-2 text-shadow-black text-shadow-md p-6 bg-blue-950 rounded-lg shadow-black shadow-md transition-all duration-500 ease-in-out" style="animation: slideUp ${delay}s ease-in-out forwards;">
                     <img src="https://jogar.luandev.blog.br:3001/image/${iconPathItem}" alt="item icon" class="w-60 h-auto">
                     <p class="font-[Minecraft] text-6xl text-yellow-200">${title}</p>
                     <div class="flex justify-center items-center gap-1 flex-row">
-                        <p class="font-[Minecraft] text-2xl line-through text-yellow-200">R$ ${(price*2)}</p>
+                        <p class="font-[Minecraft] text-2xl line-through text-yellow-200 promotion_card">R$ ${(price*2)}</p>
                         <p class="font-[Minecraft] text-5xl text-yellow-400">R$ ${price}</p>
                     </div>
                     <p class="font-[Minecraft] text-green-400 text-2xl">${subtitle}</p>
@@ -95,8 +121,14 @@ async function onClickCategory(category) {
                     <div class="description_card min-w-[20rem] min-h-[14rem] z-10 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase brightness-90">${description}</div>
                 </a>
         `
-        html += htmlItem;
-        delay += 0.1; // Aumenta o delay para o próximo item
+        contentItems.innerHTML += htmlItem;
+
+        const elementCard = contentItems.getElementsByClassName("card")[contentItems.getElementsByClassName("card").length - 1];
+        if (!promotion) {
+            const elementPromotion = elementCard.getElementsByClassName("promotion_card")[0];
+            elementPromotion.innerHTML="";
+        }
+
+        delay += 0.3;
     }
-    contentItems.innerHTML = html; // Adiciona o HTML dos itens ao conteúdo
 }
