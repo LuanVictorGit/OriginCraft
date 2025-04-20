@@ -12,6 +12,18 @@
     src: url('../src/fonts/Minecraftchmc-dBlX.ttf');
 }
 
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 * {
     @apply max-w-full;
 }
@@ -61,7 +73,7 @@ a>* {
 }
 
 .button_category {
-    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-1 text-stone-50 uppercase flex-col flex-nowrap font-bold p-2 rounded-md text-2xl bg-blue-700 w-full;
+    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-1 text-stone-50 uppercase flex-col flex-nowrap font-bold p-2 rounded-md text-2xl bg-blue-700 w-full min-w-[8rem];
 }
 
 .button_category img {
@@ -69,7 +81,7 @@ a>* {
 }
 
 .button_category:hover {
-    @apply bg-blue-500;
+    @apply bg-blue-800 brightness-90;
 }
 
 .button_category:hover img {
@@ -77,7 +89,7 @@ a>* {
 }
 
 .category_selected {
-    @apply cursor-not-allowed bg-blue-500;
+    @apply cursor-not-allowed bg-blue-800 brightness-90;
 }
 
 .category_selected img {
@@ -93,7 +105,7 @@ a>* {
 }
 
 .description_card {
-    @apply duration-700 ease-in-out transition-all top-135 rounded-lg bg-blue-950;
+    @apply duration-700 ease-in-out transition-all top-10 rounded-lg bg-blue-950;
 }
 
 .card:hover {
@@ -105,7 +117,7 @@ a>* {
 }
 
 .loader {
-    @apply rounded-full animate-spin bg-transparent border-b-4 border-b-blue-400 w-[3rem] h-[3rem];
+    @apply rounded-full animate-spin bg-transparent border-b-4 border-b-blue-950 w-[3rem] h-[3rem];
 }
 
 .selectorsFooter {

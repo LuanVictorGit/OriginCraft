@@ -1,10 +1,8 @@
 let clickedIp = false;
-let categorySelected;
 let pageSelected;
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
-    categorySelected = document.getElementById("vip1"); //definindo a categoria selecionada por padrão
     pageSelected = document.getElementById("shop_button"); // definindo a página selecionada por padrão
 
     document.addEventListener("click", (e) => {
@@ -19,15 +17,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 pageSelected = element;
             }
             return;
-        }
-
-        if (element.classList.contains("button_category")) { // configurando botão das categorias
-            e.preventDefault();
-            if (!element.classList.contains("category_selected")){
-                categorySelected.classList.remove("category_selected");
-                element.classList.add("category_selected");
-                categorySelected = element;
-            }
         }
         
     });
