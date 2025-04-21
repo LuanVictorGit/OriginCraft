@@ -2,6 +2,7 @@ let quantity = 1;
 document.addEventListener("DOMContentLoaded", async () => {
     updateCategorys();
 
+    // clicando nos elementos
     document.addEventListener("click", (e) => {
         const element = e.target;
 
@@ -33,6 +34,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         element.classList.add("category_selected");
         categorySelected = element;
         onClickCategory(json["categorys"][element.id.split("_")[1]]);
+    });
+
+    // escrevendo no campo do nick
+    document.addEventListener("input", (e) => {
+
+        const element = e.target;
+        if (element.id !== "inputNick") return;
+        const img = document.getElementById("playerOfNick");
+
+        img.src = `https://mc-heads.net/player/${element.value}`;
+
     });
 });
 
@@ -137,10 +149,18 @@ function onClickItemShop(event) {
                 </a>
             </div>
         </div>
+        <div class="rounded-lg p-6 backdrop-blur-xs bg-blue-950/50 shadow-black shadow-md w-fit">
+            <img src="https://mc-heads.net/player/" alt="item icon" class="w-[10rem] h-auto" id="playerOfNick"> 
+        </div>
     </div>
-    <p class="w-[50rem] text-blue-50 bg-red-900 shadow-black shadow-md rounded-lg p-6 text-2xl text-justify">
-        <span class="animate-bounce font-bold text-red-400">OBS:</span> Ao comprar o produto, você concorda automaticamente com nossos termos e condições. Após o pagamento, você deverá entrar em nosso servidor com o nick selecionado e executar o comando <span class="text-green-500">/CaixaPostal</span> para verificar o status do pagamento e, consequentemente, resgatar suas compras, caso aprovado.
-    </p>
+    <div class="w-[50rem] bg-red-900 shadow-black shadow-md rounded-lg p-4 flex justify-center items-center flex-row flex-nowrap gap-2">
+        <div class="w-fit flex justify-center items-center bg-black/10 p-4 h-full rounded-lg">
+            <img src="./src/images/warning.png" alt="item icon" class="w-10 h-auto invert animate-pulse"> 
+        </div>
+        <div class="w-full text-1xl text-justify text-blue-50 bg-black/10 p-4 h-full rounded-lg">
+            <span class="animate-bounce font-bold text-red-400">OBS:</span> Ao comprar o produto, você concorda automaticamente com nossos termos e condições. Após o pagamento, você deverá entrar em nosso servidor com o nick selecionado e executar o comando <span class="text-green-500">/CaixaPostal</span> para verificar o status do pagamento e, consequentemente, resgatar suas compras, caso aprovado.
+        </div>
+    </div>
 </div>
     `;
 

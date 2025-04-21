@@ -151,3 +151,9 @@ a>* {
 .selectorsFooter img {
     @apply w-8 h-auto invert;
 }
+
+.selectedPage {
+    display: unset;
+    animation: slideUp 1s ease-in-out forwards;
+    @apply duration-500 ease-in-out transition-all;
+}

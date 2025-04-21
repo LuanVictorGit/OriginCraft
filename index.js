@@ -1,24 +1,46 @@
 let clickedIp = false;
+
 let pageSelected;
-
 document.addEventListener("DOMContentLoaded", ()=>{
-
-    pageSelected = document.getElementById("shop_button"); // definindo a página selecionada por padrão
 
     document.addEventListener("click", (e) => {
 
         const element = e.target;
-        if (element.classList.contains("button")) { // configurando botão das páginas
+        if (element.classList.contains("button") || element.id === "terms_button") { // configurando botão das páginas
             e.preventDefault();
-            window.scrollTo(0, 0);
             if (!element.classList.contains("button_selected")){
-                pageSelected.classList.remove("button_selected");
+                window.scrollTo(0, 0);
+                if (document.getElementsByClassName("button_selected").length > 0) document.getElementsByClassName("button_selected")[0].classList.remove("button_selected");
+                if (pageSelected) pageSelected.classList.remove("button_selected");
                 element.classList.add("button_selected");
                 pageSelected = element;
+                if (document.getElementsByClassName("selectedPage").length > 0) document.getElementsByClassName("selectedPage")[0].classList.remove("selectedPage");
+                let elementClicked;
+                switch(pageSelected.id) {
+                    case "shop_button":
+                        elementClicked = document.getElementById("contentMainPage");
+                        break;
+                    case "wiki_button":
+                        elementClicked = document.getElementById("contentWikiPage");
+                        break;
+                    case "terms_button":
+                        elementClicked = document.getElementById("contentTermsPage");
+                        break;
+                }
+                resetPages();
+                if (elementClicked) {
+                    elementClicked.classList.add("selectedPage");
+                    elementClicked.style.display = null;
+                }   
             }
             return;
         }
-        
     });
 
 });
+
+function resetPages(){
+    document.getElementById("contentMainPage").style.display = "none";
+    document.getElementById("contentWikiPage").style.display = "none";
+    document.getElementById("contentTermsPage").style.display = "none";
+}
