@@ -154,6 +154,34 @@ a>* {
 
 .selectedPage {
     display: unset;
-    animation: slideUp 1s ease-in-out forwards;
+    animation: slideUp .5s ease-in-out forwards;
     @apply duration-500 ease-in-out transition-all;
+}
+
+.selectedButtonWiki {
+    @apply brightness-60 cursor-not-allowed;
+}
+
+.wikiContent {
+    @apply text-blue-50 font-[Minecraft2];
+}
+
+.wikiContent * {
+    animation: slideUp .5s ease-in-out forwards;
+}
+
+.wikiContent h1, h2 {
+    @apply text-5xl uppercase font-bold font-[Minecraft] text-shadow-black text-shadow-md;
+}
+
+.wikiContent h2 {
+    @apply text-2xl;
+}
+
+.wikiContent p {
+    @apply text-2xl w-200;
+}
+
+.wikiContent iframe {
+    @apply w-[40rem] h-[25rem] rounded-lg shadow-black shadow-md border-2 border-blue-500 mt-4;
 }

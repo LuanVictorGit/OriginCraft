@@ -8,7 +8,7 @@
     <link rel="icon" href="./src/images/logo.png" type="image/png">
 </head>
 <body class="bg-stone-300">
-    <header class="w-100vw bg-blue-950 h-14">
+    <header class="w-full bg-blue-950 h-14">
         <nav class="h-full flex justify-evenly items-center">
             <h1 class="title flex justify-center items-center gap-2 flex-row">
                 <div>
@@ -28,7 +28,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="w-full">
         <div id="contentMainPage" class="selectedPage"> <!-- página principal -->
             <div class="flex justify-center items-start p-40 gap-10">
                 <div>
@@ -96,7 +96,19 @@
             </div>
         </div>
         <div id="contentWikiPage"> <!-- página da wiki -->
-            
+            <div class="bg-blue-950/70 w-full h-fit rounded-lg shadow-black shadow-md p-4 flex flex-row justify-start items-center gap-4">
+                <div class="bg-black/30 w-[18rem] min-h-[100vh] rounded-lg flex justify-start p-4 items-center flex-col gap-2" id="contentButtonsWiki">
+                    <!-- conteudo dos botões da página -->
+                </div>
+                <div id="contentContentWiki" class="flex justify-start items-center flex-col min-h-[100vh] p-4 gap-10">
+                    <div id="titleContentWiki" class="font-[Minecraft2] text-7xl uppercase font-bold text-shadow-black text-shadow-md text-blue-50 p-4 bg-blue-400 rounded-tr-4xl rounded-bl-4xl shadow-black shadow-md">
+                        <!-- titulo da wiki -->
+                    </div>
+                    <div class="wikiContent" id="contentGeneralWiki">
+                        <!-- conteudo geral da wiki -->
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="contentTermsPage"> <!-- página dos termos de uso -->
 

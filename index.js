@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                         break;
                     case "wiki_button":
                         elementClicked = document.getElementById("contentWikiPage");
+                        if (document.getElementsByClassName("buttonWiki")[0]) document.getElementsByClassName("buttonWiki")[0].click();
                         break;
                     case "terms_button":
                         elementClicked = document.getElementById("contentTermsPage");
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 if (elementClicked) {
                     elementClicked.classList.add("selectedPage");
                     elementClicked.style.display = null;
-                }   
+                }
             }
             return;
         }
