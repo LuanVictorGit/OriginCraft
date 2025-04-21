@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-red-900: oklch(39.6% 0.141 25.723);
     --color-yellow-200: oklch(94.5% 0.129 101.54);
@@ -27,9 +28,7 @@
     --color-stone-50: oklch(98.5% 0.001 106.423);
     --color-stone-300: oklch(86.9% 0.005 56.366);
     --color-black: #000;
-    --color-white: #fff;
     --spacing: 0.25rem;
-    --container-md: 28rem;
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
     --text-2xl: 1.5rem;
@@ -52,7 +51,6 @@
     --animate-bounce: bounce 1s infinite;
     --blur-xs: 4px;
     --blur-sm: 8px;
-    --blur-xl: 24px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -247,12 +245,6 @@
   .h-\[4rem\] {
     height: 4rem;
   }
-  .h-\[5rem\] {
-    height: 5rem;
-  }
-  .h-\[25rem\] {
-    height: 25rem;
-  }
   .h-\[100vh\] {
     height: 100vh;
   }
@@ -262,9 +254,6 @@
   .h-full {
     height: 100%;
   }
-  .min-h-\[3\] {
-    min-height: 3;
-  }
   .min-h-\[14rem\] {
     min-height: 14rem;
   }
@@ -273,9 +262,6 @@
   }
   .min-h-\[25rem\] {
     min-height: 25rem;
-  }
-  .min-h-\[30rem\] {
-    min-height: 30rem;
   }
   .min-h-\[50rem\] {
     min-height: 50rem;
@@ -307,12 +293,6 @@
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
-  .w-\[5rem\] {
-    width: 5rem;
-  }
-  .w-\[10rem\] {
-    width: 10rem;
-  }
   .w-\[12rem\] {
     width: 12rem;
   }
@@ -322,29 +302,11 @@
   .w-\[20rem\] {
     width: 20rem;
   }
-  .w-\[25rem\] {
-    width: 25rem;
-  }
-  .w-\[30rem\] {
-    width: 30rem;
-  }
-  .w-\[40rem\] {
-    width: 40rem;
-  }
   .w-\[50rem\] {
     width: 50rem;
   }
-  .w-\[70\%\] {
-    width: 70%;
-  }
   .w-\[80\%\] {
     width: 80%;
-  }
-  .w-\[90\%\] {
-    width: 90%;
-  }
-  .w-\[rem\] {
-    width: rem;
   }
   .w-fit {
     width: fit-content;
@@ -397,9 +359,6 @@
   .items-start {
     align-items: flex-start;
   }
-  .justify-around {
-    justify-content: space-around;
-  }
   .justify-center {
     justify-content: center;
   }
@@ -433,18 +392,11 @@
   .scroll-auto {
     scroll-behavior: auto;
   }
-  .rounded {
-    border-radius: 0.25rem;
-  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
-  }
-  .rounded-t-lg {
-    border-top-left-radius: var(--radius-lg);
-    border-top-right-radius: var(--radius-lg);
   }
   .rounded-tl-2xl {
     border-top-left-radius: var(--radius-2xl);
@@ -487,9 +439,6 @@
   .bg-blue-950 {
     background-color: var(--color-blue-950);
   }
-  .bg-green-800 {
-    background-color: var(--color-green-800);
-  }
   .bg-green-900 {
     background-color: var(--color-green-900);
   }
@@ -511,9 +460,6 @@
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
-  .p-20 {
-    padding: calc(var(--spacing) * 20);
-  }
   .p-40 {
     padding: calc(var(--spacing) * 40);
   }
@@ -525,9 +471,6 @@
   }
   .text-left {
     text-align: left;
-  }
-  .font-\[Minecraft1\] {
-    font-family: Minecraft1;
   }
   .font-\[Minecraft2\] {
     font-family: Minecraft2;
@@ -573,6 +516,9 @@
   }
   .text-green-500 {
     color: var(--color-green-500);
+  }
+  .text-red-400 {
+    color: var(--color-red-400);
   }
   .text-red-600 {
     color: var(--color-red-600);
@@ -666,10 +612,6 @@
     --tw-duration: 500ms;
     transition-duration: 500ms;
   }
-  .duration-700 {
-    --tw-duration: 700ms;
-    transition-duration: 700ms;
-  }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
@@ -687,16 +629,6 @@
   .text-shadow-md {
     text-shadow: 0px 1px 1px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1)), 0px 1px 2px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1)), 0px 2px 4px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1));
   }
-  .hover\:scale-90 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-scale-x: 90%;
-        --tw-scale-y: 90%;
-        --tw-scale-z: 90%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
   .hover\:scale-95 {
     &:hover {
       @media (hover: hover) {
@@ -704,29 +636,6 @@
         --tw-scale-y: 95%;
         --tw-scale-z: 95%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
-  .hover\:border-l {
-    &:hover {
-      @media (hover: hover) {
-        border-left-style: var(--tw-border-style);
-        border-left-width: 1px;
-      }
-    }
-  }
-  .hover\:border-l-4 {
-    &:hover {
-      @media (hover: hover) {
-        border-left-style: var(--tw-border-style);
-        border-left-width: 4px;
-      }
-    }
-  }
-  .hover\:border-l-blue-900 {
-    &:hover {
-      @media (hover: hover) {
-        border-left-color: var(--color-blue-900);
       }
     }
   }
@@ -751,22 +660,6 @@
         --tw-brightness: brightness(75%);
         filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
       }
-    }
-  }
-  .focus\:border-l-2 {
-    &:focus {
-      border-left-style: var(--tw-border-style);
-      border-left-width: 2px;
-    }
-  }
-  .focus\:border-blue-400 {
-    &:focus {
-      border-color: var(--color-blue-400);
-    }
-  }
-  .focus\:bg-black {
-    &:focus {
-      background-color: var(--color-black);
     }
   }
 }

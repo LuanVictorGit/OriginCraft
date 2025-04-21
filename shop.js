@@ -138,7 +138,9 @@ function onClickItemShop(event) {
             </div>
         </div>
     </div>
-    <p class="w-[50rem] text-blue-50 bg-red-900 shadow-black shadow-md rounded-lg p-6 text-2xl text-justify">Ao confirmar a compra você concorda automaticamente com nossos termos e condições. Verifique se você colocou o seu nickname corretamente antes de efetuar o pagamento, in-game execute o comando /CaixaPostal para verificar suas transações e consequentemente resgatar suas compras.</P>
+    <p class="w-[50rem] text-blue-50 bg-red-900 shadow-black shadow-md rounded-lg p-6 text-2xl text-justify">
+        <span class="animate-bounce font-bold text-red-400">OBS:</span> Ao comprar o produto, você concorda automaticamente com nossos termos e condições. Após o pagamento, você deverá entrar em nosso servidor com o nick selecionado e executar o comando <span class="text-green-500">/CaixaPostal</span> para verificar o status do pagamento e, consequentemente, resgatar suas compras, caso aprovado.
+    </p>
 </div>
     `;
 
