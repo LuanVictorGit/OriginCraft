@@ -185,3 +185,28 @@ a>* {
 .wikiContent iframe {
     @apply w-[40rem] h-[25rem] rounded-lg shadow-black shadow-md border-2 border-blue-500 mt-4;
 }
+
+.terms {
+    @apply flex flex-col justify-center items-start;
+}
+
+.terms * {
+    animation: slideUp .5s ease-in-out forwards;
+    @apply gap-1 p-2;
+}
+
+.terms h1 {
+    @apply text-blue-50 text-5xl uppercase font-bold font-[roboto] text-shadow-black text-shadow-md;
+}
+
+.terms h2 {
+    @apply text-blue-50 text-3xl font-[roboto] font-bold;
+}
+
+.terms p {
+    @apply text-stone-300 text-lg font-[roboto] text-justify max-w-[50rem];
+}
+
+.terms ul {
+    @apply list-disc text-stone-300 font-[roboto];
+}
