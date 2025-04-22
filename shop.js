@@ -116,12 +116,12 @@ function onClickItemShop(event) {
     const iconPathItem = item["iconPath"];
     const price = item["price"];
     const html = `
-  <div class="w-full h-[100vh] z-50 backdrop-blur-sm bg-opacity-50 flex flex-col items-center justify-start p-2 gap-10 scroll-auto" id="confirmBuy">
+  <div class="w-screen h-[100vh] z-50 backdrop-blur-sm bg-opacity-50 flex flex-col items-center justify-start p-2 gap-2 md:gap-10 scroll-auto" id="confirmBuy">
     <a href="#" class="bg-blue-950 w-[15rem] h-[4rem] flex justify-center items-center gap-2 rounded-lg shadow-black shadow-md duration-500 ease-in-out transition-all hover:brightness-75" onclick="closeModalShopItem()" id="buttonBack">
         <img src="./src/images/arrow_back.png" alt="back icon" class="w-6 h-auto invert animate-pulse">
         <p class="text-blue-50 font-[Minecraft2] uppercase text-4xl font-bold">voltar</p>
     </a>
-    <div class="flex justify-evenly items-center gap-20 flex-row">
+    <div class="flex justify-evenly items-center gap-10 md:gap-20 flex-col md:flex-row">
         <div class="w-[20rem] min-h-[25rem] bg-blue-950 shadow-black shadow-md rounded-lg brightness-90 flex justify-start items-center gap-2 flex-col p-4">
             <img src="https://jogar.luandev.blog.br:3001/image/${iconPathItem}" alt="item icon" class="w-[12rem] h-auto rounded-lg">
             <p class="text-blue-50 font-[Minecraft2] text-6xl text-center">${title}<br>${subtitle}</p>
@@ -129,11 +129,11 @@ function onClickItemShop(event) {
             <div class="p-2 rounded-lg bg-blue-900 w-[80%] text-left text-blue-50 font-[Minecraft2] text-2xl">${description}</div>
         </div>
         <div class="bg-blue-950 w-[20rem] min-h-[20rem] gap-4 flex justify-start items-center flex-col shadow-black shadow-md rounded-lg">
-            <div class="w-[80%] flex flex-col justify-center items-start text-4xl font-[Minecraft2] text-blue-50">
-                <label for="inputNick" class="text-blue-50 uppercase text-3xl p-1">Nickname <span class="text-red-600 text-2xl">*</span></label>
+            <div class="md:w-[80%] flex flex-col justify-center items-start text-2xl md:text-4xl font-[Minecraft2] text-blue-50">
+                <label for="inputNick" class="text-blue-50 uppercase text-lg md:text-3xl p-1">Nickname <span class="text-red-600 text-lg md:text-2xl">*</span></label>
                 <input type="text" id="inputNick" class="w-full h-[3rem] bg-blue-900 text-blue-50 rounded-lg p-2 shadow-black shadow-md border-none outline-none" placeholder="Ex: lHawk_">
             </div>
-            <div class="w-[80%] flex justify-center items-center gap-2">
+            <div class="md:w-[80%] flex justify-center items-center gap-2">
                 <div class="flex justify-center items-center flex-row w-full text-4xl gap-1 font-[Minecraft2] text-blue-50 bg-blue-900 rounded-lg p-2 shadow-black shadow-md">
                     <div class="w-fit text-center" id="inputQuantity">1</div>
                     <div>un.</div>
@@ -158,7 +158,7 @@ function onClickItemShop(event) {
         <div class="w-fit flex justify-center items-center bg-black/10 p-4 h-full rounded-lg">
             <img src="./src/images/warning.png" alt="item icon" class="w-10 h-auto invert animate-pulse"> 
         </div>
-        <div class="w-full text-1xl text-justify text-blue-50 bg-black/10 p-4 h-full rounded-lg">
+        <div class="w-full text-sm md:text-1xl text-justify text-blue-50 bg-black/10 p-4 h-full rounded-lg">
             <span class="animate-bounce font-bold text-red-400">OBS:</span> Ao comprar o produto, você concorda automaticamente com nossos <a href="#" class="text-green-300" onclick="
                 document.getElementById('buttonBack').click();
                 document.getElementById('terms_button').click();
@@ -217,26 +217,26 @@ async function onClickCategory(category) {
         const promotion = item["promotion"];
 
         var htmlItem = `
-                <a href="#" onclick="onClickItemShop(event)" data-item='${JSON.stringify(item)}' class="card flex justify-center items-center flex-col w-100 max-w-100 gap-2 text-shadow-black text-shadow-md p-6 bg-blue-950 rounded-lg shadow-black shadow-md transition-all duration-500 ease-in-out" style="animation: slideUp ${delay}s ease-in-out forwards;">
+                <a href="#" onclick="onClickItemShop(event)" data-item='${JSON.stringify(item)}' class="card flex justify-center items-center flex-col w-40 md:w-100 max-w-100 gap-1 md:gap-2 text-shadow-black text-shadow-md p-2 md:p-6 bg-blue-950 rounded-lg shadow-black shadow-md transition-all duration-500 ease-in-out" style="animation: slideUp ${delay}s ease-in-out forwards;">
                     <img src="https://jogar.luandev.blog.br:3001/image/${iconPathItem}" alt="item icon" class="w-60 h-auto">
-                    <p class="font-[Minecraft] text-6xl text-yellow-200">${title}</p>
-                    <div class="flex justify-center items-center gap-1 flex-row">
-                        <p class="font-[Minecraft] text-2xl line-through text-yellow-200 promotion_card">R$ ${(price*2)}</p>
-                        <p class="font-[Minecraft] text-5xl text-yellow-400">R$ ${price}</p>
+                    <p class="font-[Minecraft] text-4xl md:text-6xl text-yellow-200">${title}</p>
+                    <div class="flex justify-center items-center gap-1 flex-col md:flex-row">
+                        <p class="font-[Minecraft] text-sm md:text-2xl line-through text-yellow-200 promotion_card">R$ ${(price*2)}</p>
+                        <p class="font-[Minecraft] text-2xl md:text-5xl text-yellow-400">R$ ${price}</p>
                     </div>
-                    <p class="font-[Minecraft] text-green-400 text-2xl">${subtitle}</p>
-                    <div class="flex justify-center items-center gap-1 p-6 rounded-full bg-blue-900">
-                        <img src="./src/images/shopping_cart.png" alt="cart icon" class="w-8 h-auto invert animate-pulse">
-                        <p class="font-[Minecraft] text-3xl uppercase text-stone-50">comprar</p>
+                    <p class="font-[Minecraft] text-green-400 text-lg md:text-2xl">${subtitle}</p>
+                    <div class="flex w-fit justify-center items-center gap-1 p-4 md:p-6 rounded-lg md:rounded-full bg-blue-900">
+                        <img src="./src/images/shopping_cart.png" alt="cart icon" class="w-4 md:w-8 h-auto invert animate-pulse">
+                        <p class="font-[Minecraft] text-lg md:text-3xl uppercase text-stone-50">comprar</p>
                     </div>
-                    <div class="description_card min-w-[20rem] min-h-[14rem] z-10 font-[Minecraft2] text-blue-50 text-2xl p-6 lowercase brightness-90">${description}</div>
+                    <div class="description_card min-w-full min-h-[5rem] md:min-h-[14rem] z-10 font-[Minecraft2] text-blue-50 text-sm md:text-2xl p-6 lowercase brightness-90">${description}</div>
                 </a>
         `
         contentItems.innerHTML += htmlItem;
 
-        /*
+        
         contentItems.getElementsByClassName("card")[contentItems.getElementsByClassName("card").length - 1].click(); //clicando no item
-        return; */
+        return; 
 
         const elementCard = contentItems.getElementsByClassName("card")[contentItems.getElementsByClassName("card").length - 1];
         if (!promotion) {

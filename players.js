@@ -35,7 +35,7 @@ async function updatePlayers() {
             let html = `
             <div class="flex justify-center items-center flex-col">
                 <p class="text-blue-50 font-[Minecraft2] text-4xl">${name}</p>
-                <img src="https://mc-heads.net/body/${name}" alt="image of player ${name} icon" class="w-40 h-auto">
+                <img src="https://mc-heads.net/body/${name}" alt="image of player ${name} icon" class="w-20 md:w-40 h-auto">
             </div>
             `
             contentPlayers.innerHTML += html;

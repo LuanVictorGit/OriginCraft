@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             return;
         }
     });
-    document.getElementById("shop_button").click();
-
+    document.getElementById("shop_button").click(); // inicializando a pagina principal
 });
 
 function resetPages(){

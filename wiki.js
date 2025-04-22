@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         let contentHtml = element["content"];
 
         const htmlButton = `
-            <a href="#" onclick="onClickButtonWiki(event)" data-item="${index}" class="w-full h-[4rem] bg-blue-700 rounded-full shadow-black shadow-md flex justify-center items-center gap-2 text-blue-50 font-[Minecraft2] uppercase text-3xl text-shadow-black text-shadow-md duration-500 ease-in-out transition-all hover:brightness-75 buttonWiki">
-                <img src="https://jogar.luandev.blog.br:3001/image/${iconPath}" alt="${name} icon" class="w-6 h-auto">
+            <a href="#" onclick="onClickButtonWiki(event)" data-item="${index}" class="md:min-w-[10rem] min-w-[4rem] h-[4rem] bg-blue-700 rounded-lg md:rounded-full shadow-black shadow-md flex justify-center flex-col md:flex-row items-center gap-1 md:gap-2 text-blue-50 font-[Minecraft2] uppercase text-sm md:text-3xl text-shadow-black text-shadow-md duration-500 ease-in-out transition-all hover:brightness-75 buttonWiki">
+                <img src="https://jogar.luandev.blog.br:3001/image/${iconPath}" alt="${name} icon" class="w-4 md:w-6 h-auto">
                 <p>${title}</p>
             </a>
         `;

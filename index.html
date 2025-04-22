@@ -15,8 +15,8 @@
 </head>
 
 <body class="bg-stone-300">
-    <header class="w-full bg-blue-950 h-14">
-        <nav class="h-full flex justify-evenly items-center">
+    <header class="w-screen bg-blue-950 h-25 md:h-14">
+        <nav class="p-2 h-full flex justify-center flex-col items-center md:flex-row md:justify-evenly">
             <h1 class="title flex justify-center items-center gap-2 flex-row">
                 <div>
                     Origin<span class="text-blue-400">Craft</span>
@@ -35,15 +35,14 @@
             </ul>
         </nav>
     </header>
-    <main class="w-full">
+    <main class="w-screen">
         <div id="contentMainPage"> <!-- página principal -->
-            <div class="flex justify-center items-start p-40 gap-10">
+            <div class="flex flex-col justify-center items-center md:items-start mt-10 p-2 md:p-40 md:gap-10 md:flex-row">
                 <div>
                     <img src="./src/images/logo.png" alt="logo servidor"
                         class="w-80 h-auto rounded-full shadow-black shadow-lg">
                 </div>
-                <div
-                    class="flex justify-center items-center gap-2 p-2 flex-col bg-blue-400 shadow-md shadow-black rounded-lg mt-24">
+                <div class="flex w-fit justify-center items-center gap-2 p-2 flex-col bg-blue-400 shadow-md shadow-black rounded-lg mt-6 md:mt-24">
                     <p class="font-[Minecraft] text-bold text-shadow-black text-shadow-md text-stone-50 text-2xl">o
                         melhor survival do brasil!</p>
                     <a href="#" title="copiar ip do servidor."
@@ -68,25 +67,25 @@
                             }, 800);
                         });
                     ">
-                        <span class="text-blue-300 text-bold font-[Minecraft]">
+                        <span class="w-fit text-blue-300 text-bold font-[Minecraft]">
                             IP:
                         </span>
-                        <p class="font-[Minecraft] min-w-40 text-stone-50" id="ip">jogar.origincraft.com.br</p>
+                        <p class="font-[Minecraft] md:min-w-40 text-stone-50" id="ip">jogar.origincraft.com.br</p>
                         <span
-                            class="font-[Minecraft] uppercase text-stone-50 bg-blue-500 p-2 flex justify-center items-center rounded-lg shadow-black shadow-md">
+                            class="w-fit font-[Minecraft] uppercase text-stone-50 bg-blue-500 p-2 flex justify-center items-center rounded-lg shadow-black shadow-md">
                             copiar
                         </span>
                     </a>
                 </div>
             </div>
-            <div class="flex justify-center items-center mt-[-5rem]">
+            <div class="flex justify-center items-center md:mt-[-5rem]">
                 <img src="./src/images/scroll.png" alt="image hand to scroll" class="w-8 h-auto animate-bounce invert">
             </div>
             <!-- criando a div da loja-->
-            <div class="backdrop-blur-xs rounded-lg min-h-[100vh] m-10 shadow-black shadow-lg p-2">
+            <div class="backdrop-blur-xs rounded-lg min-h-[100vh] md:m-10 shadow-black shadow-lg p-2">
                 <div
                     class="w-full text-center p-6 bg-blue-500 shadow-black shadow-2xl flex justify-center items-center rounded-tr-lg rounded-tl-lg">
-                    <p class="font-[Minecraft] text-3xl text-stone-50 text-shadow-black text-shadow-md">selecione a
+                    <p class="font-[Minecraft] text-2xl md:text-3xl text-stone-50 text-shadow-black text-shadow-md">selecione a
                         categoria para visualizar</p>
                 </div>
                 <div class="flex">
@@ -101,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-start items-center h-[100vh] m-10 p-6 flex-col gap-6">
+            <div class="flex justify-start items-center min-h-[5rem] m-10 p-6 flex-col gap-2 md:gap-6">
                 <div
                     class="flex justify-center items-center gap-1 font-[Minecraft2] uppercase font-bold text-blue-50 text-5xl">
                     <p class="mr-2">jogadores online ></p>
@@ -109,21 +108,20 @@
                     <img src="./src/images/online.png" alt="image online icon"
                         class="w-2 h-auto animate-pulse brightness-150">
                 </div>
-                <div class="loader gap-25 flex justify-center items-center flex-wrap" id="contentPlayers">
+                <div class="loader gap-10 md:gap-25 flex justify-center items-center flex-wrap" id="contentPlayers">
                     <!--content of players on web-->
                 </div>
             </div>
         </div>
         <div id="contentWikiPage"> <!-- página da wiki -->
-            <div
-                class="bg-blue-950/70 min-w-full min-h-screen rounded-lg shadow-black shadow-md p-4 flex flex-row justify-start items-center gap-4">
-                <div class="bg-black/30 min-w-[18rem] min-h-[100vh] rounded-lg flex justify-start p-4 items-center flex-col gap-2"
+            <div class="bg-blue-950/70 min-w-full min-h-screen rounded-lg shadow-black mt-10 md:mt-0 shadow-md p-1 md:p-4 flex flex-row justify-start items-start gap-1 md:gap-4">
+                <div class="bg-black/30 md:min-w-[18rem] min-h-[100vh] md:rounded-lg flex justify-start p-1 md:p-4 items-center flex-col gap-1 md:gap-2"
                     id="contentButtonsWiki">
                     <!-- conteudo dos botões da página -->
                 </div>
                 <div id="contentContentWiki" class="flex justify-start items-center flex-col min-h-[100vh] p-4 gap-10">
                     <div id="titleContentWiki"
-                        class="font-[Minecraft2] text-7xl uppercase font-bold text-shadow-black text-shadow-md text-blue-50 p-4 bg-blue-400 rounded-tr-4xl rounded-bl-4xl shadow-black shadow-md">
+                        class="font-[Minecraft2] w-full text-center text-4xl md:text-7xl uppercase font-bold text-shadow-black text-shadow-md text-blue-50 p-4 bg-blue-400 rounded-tr-4xl rounded-bl-4xl shadow-black shadow-md">
                         <!-- titulo da wiki -->
                     </div>
                     <div class="wikiContent" id="contentGeneralWiki">
@@ -133,9 +131,8 @@
             </div>
         </div>
         <div id="contentTermsPage"> <!-- página dos termos de uso -->
-            <div
-                class="bg-blue-950/80 min-w-full min-h-screen rounded-lg shadow-black shadow-md p-4 flex flex-col justify-center items-center gap-4 terms">
-                <div class="bg-black/30 p-10 w-fit min-h-screen rounded-lg">
+            <div class="bg-blue-950/80 min-w-full min-h-screen rounded-lg shadow-black shadow-md p-4 flex flex-col justify-center items-center gap-4 terms">
+                <div class="bg-black/30 p-20 w-fit min-h-screen rounded-lg">
                     <h1>Termos de Uso – OriginCraft</h1>
                     <p><em>Última atualização: 21 de abril de 2025</em></p>
 
@@ -208,7 +205,7 @@
             </div>
         </div>
     </main>
-    <footer class="flex flex-col justify-center items-center gap-10 w-full bg-blue-950 p-6">
+    <footer class="flex flex-col justify-center items-center gap-2 md:gap-10 w-full bg-blue-950 p-2 md:p-6">
         <div class="selectorsFooter">
             <div>
                 <h1>acessibilidade</h1>

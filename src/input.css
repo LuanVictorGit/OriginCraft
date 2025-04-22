@@ -73,11 +73,11 @@ a>* {
 }
 
 .button_category {
-    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-1 text-stone-50 uppercase flex-col flex-nowrap font-bold p-2 rounded-md text-2xl bg-blue-700 w-full min-w-[8rem];
+    @apply transition-all duration-500 ease-in-out flex items-center justify-center gap-1 text-stone-50 uppercase flex-col flex-nowrap font-bold p-2 rounded-md text-lg md:text-2xl bg-blue-700 w-full min-w-fit;
 }
 
 .button_category img {
-    @apply w-6 h-auto;
+    @apply w-5 md:w-6 h-auto;
 }
 
 .button_category:hover {
@@ -121,7 +121,7 @@ a>* {
 }
 
 .selectorsFooter {
-    @apply flex justify-center items-center gap-6;
+    @apply flex justify-center flex-col md:flex-row items-center gap-1 md:gap-6;
 }
 
 .selectorsFooter * {
@@ -129,19 +129,19 @@ a>* {
 }
 
 .selectorsFooter div {
-    @apply w-[25rem] flex justify-center items-center gap-2 rounded-lg p-2 flex-col;
+    @apply w-fit md:w-[25rem] flex justify-center items-center gap-2 rounded-lg p-2 flex-col;
 }
 
 .selectorsFooter h1 {
-    @apply font-[Minecraft1] text-blue-50 border-b-2 border-b-blue-400 border-dashed;
+    @apply text-lg md:text-2xl font-[Minecraft1] text-blue-50 border-b-2 border-b-blue-400 border-dashed;
 }
 
 .selectorsFooter p {
-    @apply font-[Minecraft2] text-blue-50 text-2xl text-justify;
+    @apply font-[Minecraft2] text-blue-50 text-sm md:text-2xl text-justify;
 }
 
 .selectorsFooter a {
-    @apply flex justify-center items-center gap-2 rounded-lg p-4 uppercase bg-blue-900 w-[15rem] shadow-black shadow-md;
+    @apply flex justify-center items-center gap-2 rounded-lg p-2 md:p-4 uppercase bg-blue-900 flex-col md:flex-row w-[15rem] shadow-black shadow-md;
 }
 
 .selectorsFooter a:hover {
@@ -149,7 +149,7 @@ a>* {
 }
 
 .selectorsFooter img {
-    @apply w-8 h-auto invert;
+    @apply w-4 md:w-8 h-auto invert;
 }
 
 .selectedPage {
@@ -171,23 +171,23 @@ a>* {
 }
 
 .wikiContent h1, h2 {
-    @apply text-5xl uppercase font-bold font-[Minecraft] text-shadow-black text-shadow-md;
+    @apply text-2xl md:text-5xl uppercase font-bold font-[Minecraft] text-shadow-black text-shadow-md;
 }
 
 .wikiContent h2 {
-    @apply text-2xl;
+    @apply text-lg;
 }
 
 .wikiContent p {
-    @apply text-2xl w-200;
+    @apply text-sm md:w-200;
 }
 
 .wikiContent iframe {
-    @apply w-[40rem] h-[25rem] rounded-lg shadow-black shadow-md border-2 border-blue-500 mt-4;
+    @apply w-[18rem] h-[9rem] md:w-[40rem] md:h-[25rem] rounded-lg shadow-black shadow-md border-2 border-blue-500 mt-4;
 }
 
 .terms {
-    @apply flex flex-col justify-start items-center;
+    @apply mt-10 md:mt-0 flex flex-col justify-start items-center;
 }
 
 .terms * {
@@ -196,15 +196,15 @@ a>* {
 }
 
 .terms h1 {
-    @apply text-blue-50 text-5xl uppercase font-bold font-[roboto] text-shadow-black text-shadow-md;
+    @apply text-blue-50 text-2xl md:text-4xl uppercase font-bold font-[roboto] text-shadow-black text-shadow-md;
 }
 
 .terms h2 {
-    @apply text-blue-50 text-3xl font-[roboto] font-bold;
+    @apply text-blue-50 text-lg md:text-3xl font-[roboto] font-bold;
 }
 
 .terms p {
-    @apply text-stone-300 text-lg font-[roboto] text-justify max-w-[50rem];
+    @apply text-stone-300 text-sm md:text-lg font-[roboto] text-justify md:max-w-[50rem];
 }
 
 .terms ul {
