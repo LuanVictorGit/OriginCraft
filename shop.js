@@ -236,7 +236,7 @@ async function onClickCategory(category) {
 
         /*
         contentItems.getElementsByClassName("card")[contentItems.getElementsByClassName("card").length - 1].click(); //clicando no item
-        return; */ 
+        return; */
 
         const elementCard = contentItems.getElementsByClassName("card")[contentItems.getElementsByClassName("card").length - 1];
         if (!promotion) {
