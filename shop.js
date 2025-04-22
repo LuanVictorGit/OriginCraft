@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         img.src = `https://mc-heads.net/player/${element.value}`;
 
+        element.value = sanitizeInput(element.value);
+
     });
 });
 
@@ -106,7 +108,6 @@ function onClickItemShop(event) {
     if (!item) return;
 
     // Desativa o scroll da página
-    document.body.style.overflow = 'hidden';
     htmlBody = document.body.innerHTML;
 
     const title = item["title"];
@@ -115,8 +116,8 @@ function onClickItemShop(event) {
     const iconPathItem = item["iconPath"];
     const price = item["price"];
     const html = `
-  <div class="w-full h-[100vh] fixed top-0 z-50 backdrop-blur-sm bg-opacity-50 flex flex-col items-center justify-start p-2 gap-10 scroll-auto" id="confirmBuy">
-    <a href="#" class="bg-blue-950 w-[15rem] h-[4rem] flex justify-center items-center gap-2 rounded-lg shadow-black shadow-md duration-500 ease-in-out transition-all hover:brightness-75" onclick="closeModalShopItem()">
+  <div class="w-full h-[100vh] z-50 backdrop-blur-sm bg-opacity-50 flex flex-col items-center justify-start p-2 gap-10 scroll-auto" id="confirmBuy">
+    <a href="#" class="bg-blue-950 w-[15rem] h-[4rem] flex justify-center items-center gap-2 rounded-lg shadow-black shadow-md duration-500 ease-in-out transition-all hover:brightness-75" onclick="closeModalShopItem()" id="buttonBack">
         <img src="./src/images/arrow_back.png" alt="back icon" class="w-6 h-auto invert animate-pulse">
         <p class="text-blue-50 font-[Minecraft2] uppercase text-4xl font-bold">voltar</p>
     </a>
@@ -158,7 +159,10 @@ function onClickItemShop(event) {
             <img src="./src/images/warning.png" alt="item icon" class="w-10 h-auto invert animate-pulse"> 
         </div>
         <div class="w-full text-1xl text-justify text-blue-50 bg-black/10 p-4 h-full rounded-lg">
-            <span class="animate-bounce font-bold text-red-400">OBS:</span> Ao comprar o produto, você concorda automaticamente com nossos termos e condições. Após o pagamento, você deverá entrar em nosso servidor com o nick selecionado e executar o comando <span class="text-green-500">/CaixaPostal</span> para verificar o status do pagamento e, consequentemente, resgatar suas compras, caso aprovado.
+            <span class="animate-bounce font-bold text-red-400">OBS:</span> Ao comprar o produto, você concorda automaticamente com nossos <a href="#" class="text-green-300" onclick="
+                document.getElementById('buttonBack').click();
+                document.getElementById('terms_button').click();
+            ">termos e condições</a>. Após o pagamento, você deverá entrar em nosso servidor com o nick selecionado e executar o comando <span class="text-green-500">/CaixaPostal</span> para verificar o status do pagamento e, consequentemente, resgatar suas compras, caso aprovado.
         </div>
     </div>
 </div>
@@ -170,6 +174,22 @@ function onClickItemShop(event) {
     document.body.innerHTML = html;
 }
 
+function sanitizeInput(input) {
+    // Remove tags HTML
+    input = input.replace(/<[^>]*>?/gm, '');
+  
+    // Permite letras, números, espaços, underscores e pontos
+    input = input.replace(/[^a-zA-Z0-9\s_\.]/g, '');
+  
+    // Remove espaços em branco no início e no final (trim)
+    input = input.trim();
+  
+    // Remove espaços em branco extras no meio (opcional)
+    input = input.replace(/\s+/g, ' ');
+  
+    return input;
+  }
+
 function updatePriceItem(){
     let element = document.getElementById("priceDiv");
     if (!element) return;
@@ -178,7 +198,6 @@ function updatePriceItem(){
 }
 
 function closeModalShopItem() {
-    document.body.style.overflow = null;
     document.body.innerHTML = htmlBody;
     ajustVolumeSound();
 }

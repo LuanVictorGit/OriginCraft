@@ -3,6 +3,7 @@ let clickedIp = false;
 let pageSelected;
 document.addEventListener("DOMContentLoaded", ()=>{
 
+    resetPages();
     document.addEventListener("click", (e) => {
 
         const element = e.target;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             return;
         }
     });
+    document.getElementById("shop_button").click();
 
 });
 

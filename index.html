@@ -9,7 +9,9 @@
     <link rel="icon" href="./src/images/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Viaoda+Libre&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="bg-stone-300">
@@ -26,7 +28,7 @@
                         <img src="./src/images/wiki.png" alt="wiki image" class="icon">
                         <p>wiki</p>
                     </a></li>
-                <li><a href="#" class="button button_selected" id="shop_button">
+                <li><a href="#" class="button" id="shop_button">
                         <img src="./src/images/shop.png" alt="shop image" class="icon">
                         <p>loja</p>
                     </a></li>
@@ -34,7 +36,7 @@
         </nav>
     </header>
     <main class="w-full">
-        <div id="contentMainPage" class="selectedPage"> <!-- página principal -->
+        <div id="contentMainPage"> <!-- página principal -->
             <div class="flex justify-center items-start p-40 gap-10">
                 <div>
                     <img src="./src/images/logo.png" alt="logo servidor"
@@ -131,65 +133,78 @@
             </div>
         </div>
         <div id="contentTermsPage"> <!-- página dos termos de uso -->
-            <div class="bg-blue-950/70 min-w-full min-h-screen rounded-lg shadow-black shadow-md p-4 flex flex-col justify-start items-center gap-4 terms">
-                <h1>Termos de Uso – OriginCraft</h1>
-                <p><em>Última atualização: 21 de abril de 2025</em></p>
+            <div
+                class="bg-blue-950/80 min-w-full min-h-screen rounded-lg shadow-black shadow-md p-4 flex flex-col justify-center items-center gap-4 terms">
+                <div class="bg-black/30 p-10 w-fit min-h-screen rounded-lg">
+                    <h1>Termos de Uso – OriginCraft</h1>
+                    <p><em>Última atualização: 21 de abril de 2025</em></p>
 
-                <section>
-                    <h2>1. Natureza das Transações</h2>
-                    <p>1.1. Todas as compras realizadas na loja do OriginCraft são classificadas como <strong>doações
-                            voluntárias</strong> para o projeto, com o objetivo de apoiar financeiramente a manutenção,
-                        desenvolvimento e melhoria contínua do servidor.</p>
-                    <p>1.2. Os benefícios concedidos aos jogadores em troca dessas doações (itens, permissões, ranks, moedas
-                        virtuais etc.) são meramente <strong>gratificações simbólicas</strong> e <strong>não possuem valor
-                            comercial ou monetário</strong> fora do ambiente virtual do servidor.</p>
-                </section>
+                    <section>
+                        <h2>1. Natureza das Transações</h2>
+                        <p>1.1. Todas as compras realizadas na loja do OriginCraft são classificadas como
+                            <strong>doações
+                                voluntárias</strong> para o projeto, com o objetivo de apoiar financeiramente a
+                            manutenção,
+                            desenvolvimento e melhoria contínua do servidor.</p>
+                        <p>1.2. Os benefícios concedidos aos jogadores em troca dessas doações (itens, permissões,
+                            ranks, moedas
+                            virtuais etc.) são meramente <strong>gratificações simbólicas</strong> e <strong>não possuem
+                                valor
+                                comercial ou monetário</strong> fora do ambiente virtual do servidor.</p>
+                    </section>
 
-                <section>
-                    <h2>2. Política de Reembolso</h2>
-                    <p>2.1. <strong>Nenhuma compra é passível de reembolso</strong>, total ou parcial, em nenhuma
-                        circunstância, incluindo, mas não se limitando a:</p>
-                    <ul>
-                        <li>Inserção incorreta do nickname (nome de usuário);</li>
-                        <li>Arrependimento após a compra;</li>
-                        <li>Compra duplicada ou não intencional;</li>
-                        <li>Incompatibilidade com versões do cliente ou problemas locais do jogador;</li>
-                        <li>Suspensão, banimento ou perda de acesso ao servidor por violação das regras.</li>
-                    </ul>
-                    <p>2.2. Ao confirmar uma doação, o usuário reconhece que está ciente e de acordo com essa política
-                        irreversível.</p>
-                </section>
+                    <section>
+                        <h2>2. Política de Reembolso</h2>
+                        <p>2.1. <strong>Nenhuma compra é passível de reembolso</strong>, total ou parcial, em nenhuma
+                            circunstância, incluindo, mas não se limitando a:</p>
+                        <ul>
+                            <li>Inserção incorreta do nickname (nome de usuário);</li>
+                            <li>Arrependimento após a compra;</li>
+                            <li>Compra duplicada ou não intencional;</li>
+                            <li>Incompatibilidade com versões do cliente ou problemas locais do jogador;</li>
+                            <li>Suspensão, banimento ou perda de acesso ao servidor por violação das regras.</li>
+                        </ul>
+                        <p>2.2. Ao confirmar uma doação, o usuário reconhece que está ciente e de acordo com essa
+                            política
+                            irreversível.</p>
+                    </section>
 
-                <section>
-                    <h2>3. Responsabilidade do Usuário</h2>
-                    <p>3.1. É de inteira <strong>responsabilidade do usuário</strong> fornecer corretamente os dados
-                        solicitados no momento da compra, especialmente o nickname (nome de usuário Minecraft).</p>
-                    <p>3.2. O OriginCraft <strong>não se responsabiliza por erros de digitação</strong>, informações
-                        inseridas de forma incorreta, ou por quaisquer consequências oriundas dessas falhas.</p>
-                    <p>3.3. Recomendamos revisar atentamente todos os dados antes de concluir a transação.</p>
-                </section>
+                    <section>
+                        <h2>3. Responsabilidade do Usuário</h2>
+                        <p>3.1. É de inteira <strong>responsabilidade do usuário</strong> fornecer corretamente os dados
+                            solicitados no momento da compra, especialmente o nickname (nome de usuário Minecraft).</p>
+                        <p>3.2. O OriginCraft <strong>não se responsabiliza por erros de digitação</strong>, informações
+                            inseridas de forma incorreta, ou por quaisquer consequências oriundas dessas falhas.</p>
+                        <p>3.3. Recomendamos revisar atentamente todos os dados antes de concluir a transação.</p>
+                    </section>
 
-                <section>
-                    <h2>4. Alterações nos Benefícios</h2>
-                    <p>4.1. O servidor reserva-se o direito de <strong>alterar, remover ou modificar os benefícios</strong>
-                        oferecidos como resultado das doações a qualquer momento, sem aviso prévio, visando o equilíbrio da
-                        jogabilidade ou por motivos técnicos/estratégicos.</p>
-                </section>
+                    <section>
+                        <h2>4. Alterações nos Benefícios</h2>
+                        <p>4.1. O servidor reserva-se o direito de <strong>alterar, remover ou modificar os
+                                benefícios</strong>
+                            oferecidos como resultado das doações a qualquer momento, sem aviso prévio, visando o
+                            equilíbrio da
+                            jogabilidade ou por motivos técnicos/estratégicos.</p>
+                    </section>
 
-                <section>
-                    <h2>5. Conduta e Sanções</h2>
-                    <p>5.1. A doação <strong>não isenta</strong> o jogador do cumprimento das regras do servidor. O
-                        descumprimento das normas poderá resultar em punições como <strong>banimento temporário ou
-                            permanente</strong>, sem qualquer tipo de compensação ou restituição dos valores doados.</p>
-                </section>
+                    <section>
+                        <h2>5. Conduta e Sanções</h2>
+                        <p>5.1. A doação <strong>não isenta</strong> o jogador do cumprimento das regras do servidor. O
+                            descumprimento das normas poderá resultar em punições como <strong>banimento temporário ou
+                                permanente</strong>, sem qualquer tipo de compensação ou restituição dos valores doados.
+                        </p>
+                    </section>
 
-                <section>
-                    <h2>6. Disposições Gerais</h2>
-                    <p>6.1. Estes Termos de Uso poderão ser atualizados periodicamente. É responsabilidade do usuário
-                        manter-se informado sobre possíveis alterações.</p>
-                    <p>6.2. Ao concluir uma compra, o usuário <strong>declara estar de acordo com todos os pontos aqui
-                            descritos</strong>, assumindo total responsabilidade pela transação realizada.</p>
-                </section>
+                    <section>
+                        <h2>6. Disposições Gerais</h2>
+                        <p>6.1. Estes Termos de Uso poderão ser atualizados periodicamente. É responsabilidade do
+                            usuário
+                            manter-se informado sobre possíveis alterações.</p>
+                        <p>6.2. Ao concluir uma compra, o usuário <strong>declara estar de acordo com todos os pontos
+                                aqui
+                                descritos</strong>, assumindo total responsabilidade pela transação realizada.</p>
+                    </section>
+                </div>
             </div>
         </div>
     </main>
