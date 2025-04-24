@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.addEventListener("click", (e) => {
         const element = e.target;
 
-        if (element.id === "plus") {
+        if (element.id === "plus") { // click on button plus
             e.preventDefault();
             const inputQuantity = document.getElementById("inputQuantity");
             let quantityDiv = parseInt(inputQuantity.innerHTML);
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        if (element.id === "minus") {
+        if (element.id === "minus") { // click on button minus
             e.preventDefault();
             const inputQuantity = document.getElementById("inputQuantity");
             let quantityDiv = parseInt(inputQuantity.innerHTML);
@@ -170,6 +170,7 @@ function onClickItemShop(event) {
 
     quantity = 1;
     itemSelected = item;
+    confirm = false;
     updatePriceItem();
     document.body.innerHTML = html;
 }
@@ -193,7 +194,7 @@ function sanitizeInput(input) {
 function updatePriceItem(){
     let element = document.getElementById("priceDiv");
     if (!element) return;
-    let number = parseFloat((itemSelected["price"] * quantity).toFixed(2));
+    let number = Number((itemSelected["price"] * quantity).toFixed(2));
     element.innerHTML = `R$ ${number}`;
 }
 
@@ -246,4 +247,49 @@ async function onClickCategory(category) {
 
         delay += 0.3;
     }
+}
+
+let confirm = false;
+async function confirmBuy(event) {
+    const target = event.target;
+    event.preventDefault();
+    if (confirm) return;
+    confirm = true;
+
+    target.innerHTML = `<div class="loader"></div>`;
+
+    let item = itemSelected;
+    const title = item["title"];
+    const subtitle = item["subtitle"];
+    const description = item["description"];
+    const iconPathItem = item["iconPath"];
+    const price = item["price"];
+    const itemIndex = item["itemIndex"];
+    const categoryIndex = item["categoryIndex"];
+
+    const req = await fetch("https://jogar.luandev.blog.br:3001/payment", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            nick: document.getElementById("inputNick").value,
+            title: title,
+            description: title + ", " + subtitle + ". " + description,
+            pictureUrl: "https://jogar.luandev.blog.br:3001/image/" + iconPathItem,
+            unit_price: Number(price).toFixed(2),
+            quantity: quantity,
+            itemIndex: itemIndex,
+            categoryIndex: categoryIndex
+        })
+    });
+
+    const json = await req.json();
+    if (!json) {
+        alert("Não foi possivel completar a compra, tente novamente mais tarde!");
+        location.reload();
+        return;
+    }
+    
+    location.href = json["initPoint"];
 }
