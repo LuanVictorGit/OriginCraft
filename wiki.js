@@ -35,6 +35,9 @@ function onClickButtonWiki(event) {
     event.preventDefault();
     if (target.classList.contains("selectedButtonWiki")) return;
     resetButtonsWiki();
+
+    window.scrollTo(0, 0);
+
     target.classList.add("selectedButtonWiki");
     const element = jsonWiki["pages"][target.dataset.item];
     const title = element["title"];
