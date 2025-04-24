@@ -266,6 +266,16 @@ async function confirmBuy(event) {
     const price = item["price"];
     const itemIndex = item["itemIndex"];
     const categoryIndex = item["categoryIndex"];
+    const nick = document.getElementById("inputNick").value;
+
+    if (!nick || nick.length < 3) {
+        alert("O nick deve ter no mínimo 3 caracteres!");
+        target.innerHTML = `<img src="./src/images/info.png" alt="cart icon" class="w-6 h-auto animate-bounce invert">`
+        setTimeout(() => {
+            location.reload();
+        }, 2000);
+        return;
+    }
 
     const req = await fetch("https://jogar.luandev.blog.br:3001/payment", {
         method: "POST",
@@ -273,7 +283,7 @@ async function confirmBuy(event) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            nick: document.getElementById("inputNick").value,
+            nick: nick,
             title: title,
             description: title + ", " + subtitle + ". " + description,
             pictureUrl: "https://jogar.luandev.blog.br:3001/image/" + iconPathItem,
