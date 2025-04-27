@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async ()=> {
-    updatePlayers();
+    //updatePlayers();
 });
 
 let lastJson = null;

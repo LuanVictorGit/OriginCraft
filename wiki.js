@@ -42,10 +42,11 @@ function onClickButtonWiki(event) {
     const element = jsonWiki["pages"][target.dataset.item];
     const title = element["title"];
 
-    // setando o titulo da página
+    // setando o titulo da página.
     const contentTitle = document.getElementById("titleContentWiki");
     contentTitle.innerHTML = title;
 
+    // setando o conteúdo da página.
     const content = document.getElementById("contentGeneralWiki");
     content.innerHTML = element["content"];
 }

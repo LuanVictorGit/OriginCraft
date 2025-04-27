@@ -301,5 +301,9 @@ async function confirmBuy(event) {
         return;
     }
     
-    location.href = json["initPoint"];
+    // Abre em nova aba/janela
+    window.open(json["initPoint"], "_blank");
+
+    // Recarrega a página atual
+    window.location.reload();
 }
