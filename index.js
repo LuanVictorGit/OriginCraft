@@ -1,17 +1,17 @@
 let clickedIp = false;
 
 let pageSelected;
-let verified = false;
 document.addEventListener("DOMContentLoaded", ()=>{
 
-    while(!verified) {
-        if (location.href !== "captcha.html") location.href = "captcha.html";
+    // E na verificação em outras páginas:
+    const captchaData = JSON.parse(localStorage.getItem('captchaVerified'));
+    if (!captchaData || !captchaData.verified || (Date.now() > captchaData.timestamp + captchaData.expiresIn)) {
+        window.location.href = "captcha.html";
         return;
     }
-
+    
     resetPages();
     document.addEventListener("click", (e) => {
-
         const element = e.target;
         if (element.classList.contains("button") || element.id === "terms_button") { // configurando botão das páginas
             e.preventDefault();

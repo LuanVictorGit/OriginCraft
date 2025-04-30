@@ -26,8 +26,13 @@
                 alert("Por favor, complete o reCAPTCHA.");
             } else {
                 // Captcha completo — redireciona
+                const verificationData = {
+                    verified: true,
+                    timestamp: Date.now(),
+                    expiresIn: 60000
+                };
+                localStorage.setItem('captchaVerified', JSON.stringify(verificationData));
                 window.location.href = "index.html";
-                verified = true;
             }
         });
     </script>
