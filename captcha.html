@@ -15,6 +15,13 @@
     </form>
 
     <script>
+
+    const captchaData = JSON.parse(localStorage.getItem('captchaVerified'));
+    if (!(!captchaData || !captchaData.verified || (Date.now() > captchaData.timestamp + captchaData.expiresIn))) {
+        window.location.href = "index.html";
+        return;
+    }
+
         document.getElementById("captchaForm").addEventListener("submit", function(e) {
             // Impede o envio padrão do formulário
             e.preventDefault();
