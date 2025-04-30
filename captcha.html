@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,45 @@
     <link rel="stylesheet" href="./src/output.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <body class="flex items-center justify-center h-screen w-screen bg-stone-700">
     <form id="captchaForm" method="POST" class="flex justify-center items-center gap-1 flex-col">
         <div class="g-recaptcha" data-sitekey="6LeGnykrAAAAAFvNRQw7GLvqT_BCQ9tdbOoSjg8n"></div>
-        <br/>
-        <input type="submit" value="confirmar" class="bg-blue-950 rounded-lg shadow-black shadow-md p-2 text-blue-50 uppercase hover:brightness-125 hover:scale-105 transition-all duration-500 ease-in-out">
+        <br />
+        <input type="submit" value="confirmar"
+            class="bg-blue-950 rounded-lg shadow-black shadow-md p-2 text-blue-50 uppercase hover:brightness-125 hover:scale-105 transition-all duration-500 ease-in-out">
     </form>
 
     <script>
 
-        const captchaData = JSON.parse(localStorage.getItem('captchaVerified'));
-        if (!(!captchaData || !captchaData.verified || (Date.now() > captchaData.timestamp + captchaData.expiresIn))) {
-            window.location.href = "index.html";
-            return;
-        }
-
-        document.getElementById("captchaForm").addEventListener("submit", function(e) {
-            // Impede o envio padrão do formulário
-            e.preventDefault();
-
-            // Obtém o valor do reCAPTCHA
-            var response = grecaptcha.getResponse();
-
-            if (response.length === 0) {
-                alert("Por favor, complete o reCAPTCHA.");
-            } else {
-                // Captcha completo — redireciona
-                const verificationData = {
-                    verified: true,
-                    timestamp: Date.now(),
-                    expiresIn: 60000
-                };
-                localStorage.setItem('captchaVerified', JSON.stringify(verificationData));
+        document.addEventListener("DOMContentLoaded", function () {
+            const captchaData = JSON.parse(localStorage.getItem('captchaVerified'));
+            if (!(!captchaData || !captchaData.verified || (Date.now() > captchaData.timestamp + captchaData.expiresIn))) {
                 window.location.href = "index.html";
+                return;
             }
+            document.getElementById("captchaForm").addEventListener("submit", function (e) {
+                // Impede o envio padrão do formulário
+                e.preventDefault();
+
+                // Obtém o valor do reCAPTCHA
+                var response = grecaptcha.getResponse();
+
+                if (response.length === 0) {
+                    alert("Por favor, complete o reCAPTCHA.");
+                } else {
+                    // Captcha completo — redireciona
+                    const verificationData = {
+                        verified: true,
+                        timestamp: Date.now(),
+                        expiresIn: 60000
+                    };
+                    localStorage.setItem('captchaVerified', JSON.stringify(verificationData));
+                    window.location.href = "index.html";
+                }
+            });
         });
     </script>
 </body>
+
 </html>
