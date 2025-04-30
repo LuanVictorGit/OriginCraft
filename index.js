@@ -1,7 +1,13 @@
 let clickedIp = false;
 
 let pageSelected;
+let verified = false;
 document.addEventListener("DOMContentLoaded", ()=>{
+
+    while(!verified) {
+        if (location.href !== "captcha.html") location.href = "captcha.html";
+        return;
+    }
 
     resetPages();
     document.addEventListener("click", (e) => {
